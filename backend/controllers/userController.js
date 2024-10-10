@@ -79,7 +79,8 @@ export const login = async (req, res, next) => {
 
         return res.status(200).cookie("token", token, {
             expires: new Date(Date.now() + 25892000000),
-            httpOnly: true
+            httpOnly: true,
+            sameSite : "None",
         }).json({
             success: true,
             message: "User LoggedIn Successfull.",
